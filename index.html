@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Government ITI (LWE) Tumba, Rohtas | Official Website</title>
+  <meta name="description" content="Official website of Government Industrial Training Institute (LWE), Tumba, Rohtas, Bihar. Trades, faculty, admissions, notices, government schemes and training & placement details." />
+  <meta name="keywords" content="Government ITI Tumba, ITI Rohtas, ITI Bihar, LWE ITI, Skill Development Bihar" />
+  <style>
+    /* ===== Academic Government Institute Palette & Layout ===== */
+    :root{
+      --primary:#4b2c83;
+      --secondary:#6a3fa0;
+      --accent:#f4c430;
+      --light:#f6f7fb;
+      --dark:#1e1e1e;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter","Segoe UI",Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#f6f7fb,#ffffff);
+      color:#222;
+      line-height:1.7;
+    }
+
+    /* ===== Top Utility Bar (Government Style) ===== */
+    .topbar{
+      background:#2f1744;
+      color:#f3eef7;
+      font-size:13px;
+      padding:6px 18px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    /* ===== Header ===== */
+    header{
+      background:linear-gradient(135deg,#3a1c71,#5b2c83,#7b4397);
+      color:#fff;
+      padding:56px 20px 44px;
+      position:relative;
+      overflow:hidden;
+    }
+    header::after{
+      content:"";
+      position:absolute;
+      bottom:-60px;
+      left:0;
+      width:100%;
+      height:120px;
+      background:radial-gradient(circle at center,rgba(255,255,255,0.25),transparent 70%);
+    }
+    .header-wrap{
+      max-width:1200px;
+      margin:auto;
+    }
+    header h1{
+      margin:0;
+      font-size:36px;
+      font-weight:700;
+      letter-spacing:0.4px;
+    }
+    header h3{
+      margin:6px 0 0;
+      font-weight:500;
+      opacity:0.95;
+    }
+    header p{
+      margin:6px 0;
+      opacity:0.9;
+      font-size:15px;
+    }
+
+    /* ===== Navigation (Clean Academic Government Menu) ===== */
+    nav{
+      background:#ffffff;
+      border-bottom:1px solid #e6e1ec;
+      position:sticky;
+      top:0;
+      z-index:999;
+    }
+    .nav-wrap{
+      max-width:1200px;
+      margin:auto;
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    nav a{
+      padding:15px 18px;
+      color:var(--primary);
+      text-decoration:none;
+      font-weight:600;
+      font-size:15px;
+      position:relative;
+    }
+    nav a::after{
+      content:"";
+      position:absolute;
+      bottom:6px;
+      left:20%;
+      width:60%;
+      height:2px;
+      background:var(--accent);
+      transform:scaleX(0);
+      transition:transform 0.3s ease;
+    }
+    nav a:hover::after{
+      transform:scaleX(1);
+    }
+    nav a:hover{
+      background:var(--light);
+      color:#3a1957;
+    }
+
+    /* ===== Main ===== */
+    main{max-width:1200px; margin:auto; padding:32px 20px}
+
+    section{
+      background:#ffffff;
+      margin-bottom:36px;
+      border-radius:14px;
+      box-shadow:0 10px 28px rgba(0,0,0,0.08);
+      padding:44px;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    section:hover{
+      transform:translateY(-3px);
+      box-shadow:0 14px 34px rgba(0,0,0,0.12);
+    }
+    section h2{
+      margin-top:0;
+      color:var(--primary);
+      font-size:30px;
+      font-weight:700;
+      border-left:8px solid var(--accent);
+      padding-left:14px;
+      letter-spacing:0.4px;
+    }
+
+    .card{
+      background:linear-gradient(145deg,#f8f4ff,#ffffff);
+      padding:22px 26px;
+      border-radius:12px;
+      margin:18px 0;
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+      transition:transform 0.25s ease;
+    }
+    .card:hover{
+      transform:scale(1.02);
+    }
+
+    ul{padding-left:22px}
+    li{margin:8px 0}
+
+    .highlight{
+      background:#fff9e6;
+      border-left:6px solid var(--accent);
+      padding:16px 20px;
+      margin-top:18px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:26px;
+    }
+
+    /* ===== Hero Slider Style ===== */
+    .hero-slider{position:relative; margin-bottom:28px; border-radius:14px; overflow:hidden; box-shadow:0 10px 28px rgba(0,0,0,0.12)}
+    .hero-slider img{width:100%; height:360px; object-fit:cover}
+    .slide{display:none; position:relative}
+    .slide.active{display:block}
+
+    /* Welcome Overlay */
+    .hero-overlay{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      z-index:5;
+      background:rgba(0,0,0,0.45);
+      padding:24px 32px;
+      border-radius:12px;
+      color:#ffffff;
+    }
+    .hero-overlay h1{
+      margin:0;
+      font-size:34px;
+      font-weight:700;
+      letter-spacing:0.5px;
+    }
+    .hero-overlay p{
+      margin-top:10px;
+      font-size:18px;
+      font-weight:600;
+      color:#f4c430;
+    }
+
+    .caption{
+      position:absolute;
+      bottom:0;
+      width:100%;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,0.7));
+      color:#fff;
+      padding:14px 18px;
+      font-size:16px;
+      font-weight:600;
+    }
+    .hero-slider .nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      background:rgba(0,0,0,0.55);
+      color:#fff;
+      border:none;
+      font-size:22px;
+      padding:8px 12px;
+      cursor:pointer;
+    }
+    .hero-slider .prev{left:10px}
+    .hero-slider .next{right:10px}
+
+/* ===== Footer (Academic Government Style) ===== */
+    footer{
+      background:linear-gradient(135deg,#2f1744,#3a1c71);
+      color:#efe8f4;
+      padding:46px 20px;
+      margin-top:60px;
+    }
+    .footer-wrap{
+      max-width:1200px;
+      margin:auto;
+      text-align:center;
+      font-size:14px;
+    }
+    .footer-wrap p{margin:6px 0}
+
+    @media(max-width:600px){
+      header h1{font-size:26px}
+      section{padding:26px}
+    }
+  /* ===== Modern Staff Table Design ===== */
+    .staff-table{
+      border-collapse:collapse;
+      margin:18px 0 28px;
+      font-size:14px;
+      background:#ffffff;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+    }
+    .staff-table th{
+      background:linear-gradient(135deg,var(--primary),var(--secondary));
+      color:#ffffff;
+      padding:12px 10px;
+      text-align:left;
+      font-weight:600;
+      letter-spacing:0.3px;
+    }
+    .staff-table td{
+      padding:11px 10px;
+      border-bottom:1px solid #eee;
+      color:#222;
+    }
+    .staff-table tr:last-child td{border-bottom:none}
+    .staff-table tr:hover{
+      background:#f6f1fb;
+      transition:0.2s ease-in-out;
+    }
+    .staff-table td:nth-child(1){
+      text-align:center;
+      font-weight:600;
+      color:var(--primary);
+      width:60px;
+    }
+    .staff-table h3{margin-top:28px}
+
+/* ===== Government Accessibility Toolbar ===== */
+    .gov-tools{display:flex;gap:6px;align-items:center}
+    .gov-btn{
+      background:#ffffff;
+      color:#2f1744;
+      border:1px solid #d6cde3;
+      padding:4px 8px;
+      font-size:13px;
+      font-weight:600;
+      border-radius:4px;
+      cursor:pointer;
+    }
+    .gov-btn:hover{background:#f1ecf8}
+
+/* ===== Notice Scroller (Govt Style) ===== */
+    .notice-bar{
+      background:#fff4cc;
+      color:#000;
+      font-weight:600;
+      padding:6px 0;
+      border-bottom:1px solid #e0d6a8;
+    }
+    .notice-bar marquee{font-size:14px}
+
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span data-text-key="govline">Government of Bihar | Official Academic Institute</span>
+  <span class="gov-tools">
+    <button class="gov-btn" onclick="changeTextSize('small')">A-</button>
+    <button class="gov-btn" onclick="changeTextSize('default')">A</button>
+    <button class="gov-btn" onclick="changeTextSize('large')">A+</button>
+    <a class="gov-btn" href="index.html">English</a>
+    <a class="gov-btn" href="index-hi.html">हिंदी</a>
+  </span>
+</div>
+
+<header>
+  <div class="header-wrap">
+    <div style="text-align:center; margin-bottom:10px">
+      <!-- OFFICIAL LOGO (Replace src when official logo file is available) -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Emblem_of_India.svg/120px-Emblem_of_India.svg.png" alt="Government Emblem" style="height:90px" />
+    </div>
+    <h1 data-text-key="title">Government Industrial Training Institute (LWE)</h1>
+    <h3 data-text-key="subtitle">Tumba, Rohtas – Bihar</h3>
+    <p><strong data-text-key="dept">Youth, Employment & Skill Development Department, Government of Bihar</strong></p>
+    <p data-text-key="framework">Academic framework aligned with DGT, MSDE, Government of India</p>
+  </div>
+</header>
+
+<div class="notice-bar">
+  <marquee behavior="scroll" direction="left">
+    📢 Admission & Registration Verification | 🇮🇳 Republic Day Celebration | 📄 Important Academic Notice – Please Check Notices Section
+  </marquee>
+</div>
+
+<nav>
+  <div class="nav-wrap">
+    <a data-text-key="home" href="#home">Home</a>
+    <a data-text-key="about" href="#about">About</a>
+    <a href="#vision">Vision</a>
+    <a href="#trades">Trades</a>
+    <a data-text-key="academics" href="#academics">Academics</a>
+    <a data-text-key="faculty" href="#staff">Faculty</a>
+    <a href="#sports">Sports</a>
+    <a href="#hostel">Hostel</a>
+    <a data-text-key="infrastructure" href="#infrastructure">Infrastructure</a>
+    <a data-text-key="placement" href="#placement">Training & Placement</a>
+    <a href="#alumni">Alumni</a>
+    <a data-text-key="notices" href="#notices">Notices</a>
+    <a href="#location">Location</a>
+    <a data-text-key="contact" href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+<section id="home">
+  <!-- ===== Hero Slider ===== -->
+  <div class="hero-slider">
+    <!-- ===== Welcome & Motto Overlay ===== -->
+    <div class="hero-overlay">
+      <h1>Welcome to Government ITI (LWE) Tumba</h1>
+      <p>"Skill • Discipline • Employment"</p>
+    </div>
+    <div class="slides">
+      <div class="slide active">
+        <img src="WhatsApp Image 2026-01-27 at 8.23.47 PM.jpeg" alt="Government ITI LWE Tumba Front View" />
+        <div class="caption">Government ITI (LWE) Tumba – Main Administrative Building</div>
+      </div>
+      <div class="slide">
+        <img src="WhatsApp Image 2026-01-27 at 8.23.47 PM (1).jpeg" alt="Government ITI LWE Tumba Campus View" />
+        <div class="caption">Government ITI (LWE) Tumba – Campus & Workshop Area</div>
+      </div>
+    </div>
+    <button class="nav prev" onclick="prevSlide()">❮</button>
+    <button class="nav next" onclick="nextSlide()">❯</button>
+  </div>
+
+  <h2>Institute Overview</h2>
+  <p>
+    Government Industrial Training Institute (LWE), Tumba, Rohtas is a premier state-run technical institute
+    committed to providing high-quality vocational education in Left Wing Extremism affected regions.
+    The institute functions under the Youth, Employment & Skill Development Department, Government of Bihar
+    and follows academic standards prescribed by DGT, MSDE, Government of India.
+  </p>
+  <div class="grid-2">
+    <div class="card">
+      <strong>Established & Governed By</strong><br />
+      Government of Bihar (DET / DGT Framework)
+    </div>
+    <div class="card">
+      <strong>Academic Focus</strong><br />
+      Skill Development | Employability | Discipline | Industry Alignment
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About the Institute</h2>
+  <p>
+    Government Industrial Training Institute (LWE), Tumba is a state government technical institute
+    dedicated to skill development in Left Wing Extremism affected regions of Bihar. The institute
+    delivers structured vocational education aligned with national skill standards prescribed by the
+    Directorate General of Training (DGT).
+  </p>
+  <div class="highlight">
+    The academic culture emphasizes discipline, outcome-based training and outcome-oriented governance practices.
+  </div>
+</section>
+
+<section id="administration">
+  <h2>Administration</h2>
+  <ul>
+    <li><strong>Principal:</strong> Ram Eqwal Ram</li>
+    <li><strong>Vice Principal:</strong> Shankar Kumar</li>
+    <li><strong>Administrative Control:</strong> Youth, Employment & Skill Development Department, Government of Bihar</li>
+    <li><strong>Academic Authority:</strong> Directorate General of Training (DGT), Government of India</li>
+  </ul>
+</section>
+
+<section id="vision">
+  <h2>Vision & Mission</h2>
+  <div class="grid-2">
+    <div class="card">
+      <strong>Vision</strong><br />
+      To develop competent, ethical and employable technicians contributing to industrial growth and
+      national development.
+    </div>
+    <div class="card">
+      <strong>Mission</strong>
+      <ul>
+        <li>Provide rigorous, practice-oriented technical training</li>
+        <li>Inculcate discipline, professionalism and work ethics</li>
+        <li>Align skills with evolving industry and technology needs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <h2>Leadership & Administration</h2>
+  <ul>
+    <li><strong>Principal:</strong> Government Appointed Principal, ITI (LWE) Tumba</li>
+    <li><strong>Vice Principal:</strong> Shankar Kumar</li>
+    <li><strong>Administrative Control:</strong> Youth, Employment & Skill Development Department, Govt. of Bihar</li>
+    <li><strong>Academic Authority:</strong> DGT / NCVT, Government of India</li>
+  </ul>
+</section>
+
+<section id="govtdept">
+  <h2>Government Oversight</h2>
+  <div class="card">
+    <strong>State Government:</strong> Youth, Employment & Skill Development Department, Government of Bihar
+  </div>
+  <div class="card">
+    <strong>Central Government:</strong> Directorate General of Training (DGT), Ministry of Skill Development & Entrepreneurship
+  </div>
+</section>
+
+<section id="trades">
+  <h2>Trades Offered</h2>
+  <ul>
+    <li><strong>ICTSM</strong> – Information & Communication Technology System Maintenance</li>
+    <li><strong>Mechanic Electronics</strong></li>
+    <li><strong>Electrician</strong></li>
+    <li><strong>DMC (Draughtsman Civil)</strong></li>
+    <li><strong>Fitter</strong></li>
+  </ul>
+</section>
+
+<section id="staff">
+  <h2>Faculty & Staff</h2>
+
+  <h3>Teaching Staff (Regular)</h3>
+  <table class="staff-table" width="100%">
+    <tr>
+      <th>S.No.</th><th>Name</th><th>Designation</th><th>Trade / Subject</th><th>Appointment Type</th>
+    </tr>
+    <tr><td>1</td><td>Ram Eqwal Ram</td><td>Principal</td><td>Administration</td><td>Regular</td></tr>
+    <tr><td>2</td><td>Shankar Kumar</td><td>Vice Principal</td><td>Administration</td><td>Regular</td></tr>
+    <tr><td>3</td><td>Satyendra Kumar</td><td>Group Instructor</td><td>Welder</td><td>Regular</td></tr>
+    <tr><td>4</td><td>Rabindra Kumar</td><td>Group Instructor</td><td>Mechanic Electronics</td><td>Regular</td></tr>
+    <tr><td>5</td><td>Bijay Kumar</td><td>Instructor</td><td>ICTSM</td><td>Regular</td></tr>
+    <tr><td>6</td><td>Abhishek Raj</td><td>Instructor</td><td>Fitter</td><td>Regular</td></tr>
+    <tr><td>7</td><td>Rohit Kumar Mahawar</td><td>Instructor</td><td>Electrician</td><td>Regular</td></tr>
+    <tr><td>8</td><td>Anil Kumar Srivastav</td><td>Instructor</td><td>DMC</td><td>Regular</td></tr>
+  </table>
+
+  <h3>Guest Instructors</h3>
+  <table class="staff-table" width="100%">
+    <tr>
+      <th>S.No.</th><th>Name</th><th>Designation</th><th>Trade / Subject</th><th>Appointment Type</th>
+    </tr>
+    <tr><td>1</td><td>Kiran Kumari</td><td>Guest Instructor</td><td>ICTSM</td><td>Guest</td></tr>
+    <tr><td>2</td><td>Chhote Lal</td><td>Guest Instructor</td><td>Fitter</td><td>Guest</td></tr>
+    <tr><td>3</td><td>Brajendra Kumar</td><td>Guest Instructor</td><td>Electrician</td><td>Guest</td></tr>
+    <tr><td>4</td><td>Rakesh Kumar</td><td>Guest Instructor</td><td>Electrician</td><td>Guest</td></tr>
+    <tr><td>5</td><td>Chandan Kumar</td><td>Guest Instructor</td><td>Workshop Calculation</td><td>Guest</td></tr>
+    <tr><td>6</td><td>Manish Kumar</td><td>Guest Instructor</td><td>Engineering Drawing</td><td>Guest</td></tr>
+    <tr><td>7</td><td>Jyoti Kumar</td><td>Guest Instructor</td><td>DMC</td><td>Guest</td></tr>
+  </table>
+
+  <h3>Non-Teaching Staff</h3>
+  <table class="staff-table" width="100%">
+    <tr>
+      <th>S.No.</th>
+      <th>Name</th>
+      <th>Designation</th>
+    </tr>
+    <tr><td>1</td><td>Adarsh Kumar Rai</td><td>Lower Division Clerk (LDC)</td></tr>
+    <tr><td>2</td><td>Poonam Kumari</td><td>Data Entry Operator (DEO)</td></tr>
+  </table>
+</section>
+
+<section id="schemes">
+  <h2>Government Schemes Implemented through ITI</h2>
+  <p>
+    Government ITI (LWE), Tumba actively supports and implements various flagship Government of India
+    schemes aimed at skill development, employment generation and self-reliance. These schemes provide
+    additional learning, certification and livelihood opportunities to ITI trainees.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Kaushal Yuva Program (KYP)</strong>
+      <p>
+        Kaushal Yuva Program is a Bihar Government initiative focused on enhancing employability skills
+        of youth through basic computer literacy, communication skills and personality development.
+        ITI trainees benefit by strengthening their foundational skills alongside technical training.
+      </p>
+      <p><strong>Implementing Agency:</strong> Government of Bihar</p>
+    </div>
+
+    <div class="card">
+      <strong>Pradhan Mantri Surya Ghar Muft Bijli Yojana</strong>
+      <p>
+        This flagship scheme aims to provide rooftop solar installations and up to 300 units of free
+        electricity per month to households. ITI trainees, especially from Electrician and related trades,
+        gain opportunities in solar installation, maintenance and green energy employment.
+      </p>
+      <p><strong>Ministry:</strong> Ministry of New & Renewable Energy, Government of India</p>
+    </div>
+
+    <div class="card">
+      <strong>Pradhan Mantri Vishwakarma Yojana</strong>
+      <p>
+        PM Vishwakarma Yojana supports traditional artisans and skilled workers through training,
+        modern tools, certification and financial assistance. ITI trainees are encouraged to upgrade
+        their skills and explore self-employment and entrepreneurship opportunities under this scheme.
+      </p>
+      <p><strong>Ministry:</strong> Ministry of MSME, Government of India</p>
+    </div>
+
+    <div class="card">
+      <strong>Dual System of Training (DST)</strong>
+      <p>
+        Under the Dual System of Training, trainees receive institutional training at ITI along with
+        on-the-job practical training in industries. This system bridges the gap between classroom
+        learning and real industrial work environment, enhancing employability.
+      </p>
+      <p><strong>Academic Authority:</strong> Directorate General of Training (DGT)</p>
+    </div>
+  </div>
+
+  <div class="highlight">
+    Participation in these schemes is subject to eligibility, government guidelines and availability
+    of programs. Students are advised to contact the institute administration for detailed information
+    and enrollment procedures.
+  </div>
+</section>
+
+<section id="academics">
+  <h2>Academics</h2>
+  <p>
+    The academic framework of Government ITI (LWE), Tumba is aligned with the standards prescribed by the
+    Directorate General of Training (DGT), Ministry of Skill Development & Entrepreneurship, Government of India.
+    Training is outcome-based, practice-oriented and industry relevant.
+  </p>
+
+  <h3>Trade-wise Academic Resources (Download Section)</h3>
+  <p>
+    For the academic convenience of trainees, trade-wise syllabus, lesson plans, demonstration plans,
+    notes and mock tests are provided below. These resources are prepared as per DGT / NCVT guidelines.
+  </p>
+
+  <table class="staff-table" width="100%">
+    <tr>
+      <th>S.No.</th>
+      <th>Trade</th>
+      <th>Syllabus (PDF)</th>
+      <th>Lesson Plan</th>
+      <th>Demo Plan</th>
+      <th>Notes</th>
+      <th>Mock Test</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>ICTSM</td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Start Test</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Mechanic Electronics</td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Start Test</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Electrician</td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Start Test</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>DMC (Draughtsman Civil)</td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Start Test</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Fitter</td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Download</a></td>
+      <td><a href="#">Start Test</a></td>
+    </tr>
+  </table>
+
+  <div class="highlight">
+    All academic materials are provided for learning support only. Official assessment and certification
+    shall be conducted strictly as per NCVT / DGT norms.
+  </div>
+</section>
+
+<section id="industry">
+  <h2>Industry & Academic Linkage</h2>
+  <p>
+    Training is aligned with apprenticeship frameworks, modern industrial practices and emerging
+    technologies, reflecting an academic-industry interface similar to leading technical institutions.
+  </p>
+</section>
+
+<section id="sports">
+  <h2>Sports & Games Facilities</h2>
+  <p>
+    Government ITI (LWE), Tumba encourages <strong>sports and physical activities</strong> as an integral part of student life.
+    Sports activities help in maintaining physical fitness, mental well-being, team spirit and discipline among trainees.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Outdoor Sports</strong>
+      <ul>
+        <li>Cricket</li>
+        <li>Football</li>
+        <li>General physical fitness activities</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Indoor Games</strong>
+      <ul>
+        <li>Badminton</li>
+        <li>Chess</li>
+        <li>Carrom</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Student Engagement</strong>
+      <ul>
+        <li>Inter-batch friendly matches</li>
+        <li>Sports activities during special occasions</li>
+        <li>Encouragement of teamwork and leadership</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Important Note</strong>
+      <ul>
+        <li>Sports activities are conducted as per institute discipline</li>
+        <li>Participation encouraged without affecting academic responsibilities</li>
+        <li>Facilities subject to availability and institute guidelines</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight">
+    The institute believes in the holistic development of trainees by promoting a healthy balance
+    between technical education, discipline and sports activities.
+  </div>
+</section>
+
+<section id="hostel">
+  <h2>Hostel Facility for Students</h2>
+  <p>
+    Government ITI (LWE), Tumba provides <strong>hostel facilities</strong> for trainees coming from distant and remote areas.
+    The hostel facility is aimed at ensuring a safe, disciplined and supportive residential environment
+    to help students focus on their technical training and overall development.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Hostel Accommodation</strong>
+      <ul>
+        <li>Separate hostel arrangement for enrolled trainees</li>
+        <li>Rooms allotted as per availability and government norms</li>
+        <li>Basic amenities for comfortable stay</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Safety & Discipline</strong>
+      <ul>
+        <li>Hostel rules framed as per institute and government guidelines</li>
+        <li>Attendance, discipline and conduct strictly monitored</li>
+        <li>Peaceful and academic-friendly environment</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Eligibility & Allotment</strong>
+      <ul>
+        <li>Hostel allotment subject to availability of seats</li>
+        <li>Preference given to students from distant areas</li>
+        <li>Allotment as per institute rules and instructions</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Important Note</strong>
+      <ul>
+        <li>Hostel facility is a welfare support, not a right</li>
+        <li>Students must follow hostel discipline and timings</li>
+        <li>Violation of rules may lead to cancellation of hostel allotment</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight">
+    Hostel facilities are provided to support inclusive education and equal learning opportunities,
+    especially for trainees from rural, remote and economically weaker backgrounds.
+  </div>
+</section>
+
+<section id="infrastructure">
+  <h2>Infrastructure & Facilities</h2>
+  <p>
+    Government ITI (LWE), Tumba provides a disciplined, safe and well-equipped academic environment
+    to support effective skill-based training. Infrastructure development follows government norms
+    and DGT guidelines for Industrial Training Institutes.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Workshops</strong>
+      <ul>
+        <li>Fully functional trade-wise workshops</li>
+        <li>Modern tools and equipment for hands-on practice</li>
+        <li>Strict safety and discipline protocols</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Laboratories</strong>
+      <ul>
+        <li>ICT-enabled computer labs</li>
+        <li>Electrical & electronics practice labs</li>
+        <li>Maintenance and troubleshooting facilities</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Classrooms</strong>
+      <ul>
+        <li>Spacious and well-ventilated classrooms</li>
+        <li>Blackboard and ICT-supported teaching</li>
+        <li>Conducive academic atmosphere</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Library & Learning Resources</strong>
+      <ul>
+        <li>Trade-specific textbooks and manuals</li>
+        <li>Reference materials as per DGT syllabus</li>
+        <li>Support for self-study and exam preparation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight">
+    Infrastructure development and utilization are continuously monitored to ensure quality training
+    outcomes, discipline and safety — reflecting best practices followed by premier technical institutes.
+  </div>
+</section>
+
+<section id="alumni">
+  <h2>Alumni</h2>
+  <p>
+    The alumni of Government Industrial Training Institute (LWE), Tumba represent the institute’s
+    commitment to quality skill development and employability. Former trainees are working in
+    various industries, government organizations and are also successfully self-employed.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Alumni Network</strong>
+      <ul>
+        <li>Skilled professionals in private and public sector industries</li>
+        <li>Apprentices trained under NAPS and industry programs</li>
+        <li>Self-employed technicians and entrepreneurs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Alumni Engagement</strong>
+      <ul>
+        <li>Guidance and motivation for current trainees</li>
+        <li>Sharing of industry experience and best practices</li>
+        <li>Support in training, placement and apprenticeship awareness</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Notable Alumni (Illustrative)</h3>
+  <table class="staff-table" width="100%">
+    <tr>
+      <th>S.No.</th>
+      <th>Name</th>
+      <th>Trade</th>
+      <th>Current Status</th>
+    </tr>
+    <tr><td>1</td><td>—</td><td>Electrician</td><td>Private Sector Technician</td></tr>
+    <tr><td>2</td><td>—</td><td>Fitter</td><td>Apprentice / Industry Trainee</td></tr>
+    <tr><td>3</td><td>—</td><td>ICTSM</td><td>Self-Employed / Service Provider</td></tr>
+  </table>
+
+  <div class="highlight">
+    The institute encourages alumni to stay connected and contribute towards mentoring,
+    placement support and continuous improvement of training quality.
+  </div>
+</section>
+
+<section id="placement">
+  <h2>Training & Placement</h2>
+  <p>
+    Government ITI (LWE), Tumba emphasizes skill-based training with a strong focus on employability.
+    The institute facilitates apprenticeship, industry exposure and career guidance in accordance with
+    the policies of the Government of India and Government of Bihar.
+  </p>
+
+  <div class="grid-2">
+    <div class="card">
+      <strong>Apprenticeship Training</strong>
+      <ul>
+        <li>Support under National Apprenticeship Promotion Scheme (NAPS)</li>
+        <li>Registration on apprenticeship portals</li>
+        <li>On-the-job training in government and private industries</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Industry Interaction</strong>
+      <ul>
+        <li>Industry-oriented practical training</li>
+        <li>Exposure to real-world industrial practices</li>
+        <li>Guidance from experienced instructors</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Placement Support</strong>
+      <ul>
+        <li>Career guidance and counseling</li>
+        <li>Information on employment opportunities</li>
+        <li>Assistance for self-employment and skill-based jobs</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <strong>Skill Development Outcomes</strong>
+      <ul>
+        <li>Enhanced technical and practical competence</li>
+        <li>Industry-ready workforce</li>
+        <li>Promotion of entrepreneurship and employability</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight">
+    Training and placement activities are continuously strengthened to bridge the gap between
+    skill development and employment, following best practices adopted by leading technical institutes.
+  </div>
+</section>
+
+<section id="admission">
+  <h2>Admission & Academic Rules</h2>
+  <p>
+    Admissions and training are conducted strictly as per DGT and Government of Bihar guidelines.
+    Trainees are expected to maintain discipline, punctuality and academic integrity.
+  </p>
+  <div class="highlight">
+    <strong>Attendance Rule:</strong> Biometric attendance is mandatory for all trainees.
+    A minimum of <strong>80% attendance</strong> is required to be eligible for examinations
+    and certification as per DGT norms.
+  </div>
+</section>
+
+<section id="links">
+  <h2>Important Official Links</h2>
+  <ul>
+    <li><a href="https://www.msde.gov.in" target="_blank">Ministry of Skill Development & Entrepreneurship (MSDE)</a></li>
+    <li><a href="https://www.dgt.gov.in" target="_blank">Directorate General of Training (DGT)</a></li>
+    <li><a href="https://state.bihar.gov.in" target="_blank">Government of Bihar</a></li>
+    <li><a href="https://det.bihar.gov.in" target="_blank">Directorate of Employment & Training, Bihar</a></li>
+  </ul>
+</section>
+
+<section id="notices">
+  <h2>Notices & Downloads</h2>
+  <h3>Latest Notices</h3>
+  <table class="staff-table" width="100%">
+    <tr><th>S.No.</th><th>Notice Title</th><th>Date</th><th>Download</th></tr>
+    <tr><td>1</td><td>Admission & Registration Verification Notice</td><td>29-01-2026</td><td><a href="#">View</a></td></tr>
+    <tr><td>2</td><td>Republic Day Celebration Notice</td><td>26-01-2026</td><td><a href="#">View</a></td></tr>
+  </table>
+  <h3>Notice Archive</h3>
+  <ul>
+    <li><strong>2026 Notices</strong> – Academic & Admission Notices</li>
+    <li><strong>2025 Notices</strong> – Training & Placement Notices</li>
+    <li><strong>2024 Notices</strong> – Admission & Infrastructure Notices</li>
+  </ul>
+</section>
+
+<section id="location">
+  <h2>Location & How to Reach</h2>
+  <p>
+    Government Industrial Training Institute (LWE), Tumba is located in Tumba village of Rohtas district,
+    Bihar. The institute is well connected by road and rail, making it easily accessible for students,
+    parents and visitors.
+  </p>
+
+  <div class="card">
+    <strong>Institute Address</strong><br />
+    Government ITI (LWE), Tumba<br />
+    Dehri – Nauhatta – Yadunathpur Road,<br />
+    Village: Tumba, District: Rohtas,<br />
+    Bihar – 821312, India
+  </div>
+
+  <h3>Google Map Location</h3>
+  <div style="width:100%; height:320px; border-radius:10px; overflow:hidden; box-shadow:0 6px 16px rgba(0,0,0,0.08)">
+    <iframe
+      src="https://www.google.com/maps?q=Government%20ITI%20LWE%20Tumba%20Rohtas%20Bihar&output=embed"
+      width="100%"
+      height="320"
+      style="border:0"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <h3>How to Reach</h3>
+  <ul>
+    <li><strong>By Road:</strong> The institute is connected through Dehri–Nauhatta–Yadunathpur Road. Regular buses, taxis and private vehicles are available from Dehri-on-Sone and Sasaram.</li>
+    <li><strong>By Rail:</strong> Nearest major railway stations are Dehri-on-Sone Railway Station and Sasaram Railway Station. From both stations, the institute can be reached by taxi or auto-rickshaw.</li>
+  </ul>
+
+  <h3>Distance & Travel Time (Approx.)</h3>
+  <table class="staff-table" width="100%">
+    <tr>
+      <th>S.No.</th>
+      <th>From</th>
+      <th>Distance</th>
+      <th>Travel Time</th>
+      <th>Mode</th>
+    </tr>
+    <tr><td>1</td><td>Dehri-on-Sone Railway Station</td><td>15–18 km</td><td>25–30 minutes</td><td>Taxi / Auto</td></tr>
+    <tr><td>2</td><td>Sasaram Railway Station</td><td>20–25 km</td><td>30–40 minutes</td><td>Taxi / Auto</td></tr>
+    <tr><td>3</td><td>Rohtas District HQ</td><td>Approx. 22 km</td><td>35 minutes</td><td>Road</td></tr>
+  </table>
+
+  <div class="highlight">
+    The institute’s location ensures accessibility while providing a disciplined and peaceful academic environment for quality skill development.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact & Grievance Redressal</h2>
+  <p>
+    <strong>Government ITI (LWE) Tumba</strong><br/>
+    Village: Tumba, District: Rohtas, Bihar – 821312
+  </p>
+  <ul>
+    <li><strong>Email:</strong> iti.lwe.tumba@gov.in <em>(illustrative)</em></li>
+    <li><strong>Office Hours:</strong> 10:00 AM – 5:00 PM (Working Days)</li>
+  </ul>
+  <div class="highlight">
+    <strong>Grievance / Feedback:</strong><br/>
+    Students and parents may submit grievances or feedback during office hours or through official communication channels of the institute. All grievances are addressed as per government norms in a time-bound manner.
+  </div>
+</section>
+
+<section id="studentlife">
+  <h2>Student Life & Discipline</h2>
+  <p>
+    Government ITI (LWE), Tumba maintains a disciplined and academically conducive environment.
+    Students are expected to adhere to institutional rules, punctuality and ethical conduct.
+  </p>
+  <div class="highlight">
+    <strong>Attendance Policy:</strong> Student attendance is recorded strictly through the biometric attendance system.
+    As per institutional and DGT guidelines, a minimum of <strong>80% attendance</strong> is mandatory for trainees
+    to be eligible for examinations, assessments and certification.
+  </div>
+  <ul>
+    <li>Mandatory attendance and punctuality</li>
+    <li>Strict adherence to safety and workshop discipline</li>
+    <li>Respectful conduct towards faculty and staff</li>
+    <li>Participation in academic and co-curricular activities</li>
+  </ul>
+  <div class="highlight">
+    Discipline, integrity and responsibility form the foundation of student life at the institute.
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Photo Gallery & Campus View</h2>
+  <div class="grid-2">
+    <img src="WhatsApp Image 2026-01-27 at 8.23.47 PM.jpeg" style="width:100%; border-radius:12px" />
+    <img src="WhatsApp Image 2026-01-27 at 8.23.47 PM (1).jpeg" style="width:100%; border-radius:12px" />
+  </div>
+</section>
+
+<section id="rti">
+  <h2>RTI & Public Disclosure</h2>
+  <ul>
+    <li><strong>Public Authority:</strong> Government ITI (LWE), Tumba</li>
+    <li><strong>RTI Act:</strong> As per Right to Information Act, 2005</li>
+    <li><strong>Administrative Control:</strong> Youth, Employment & Skill Development Department, Government of Bihar</li>
+    <li><strong>Academic Authority:</strong> Directorate General of Training (DGT), Government of India</li>
+  </ul>
+</section>
+
+<section id="compliance">
+  <h2>Compliance, Security & Updates</h2>
+  <ul>
+    <li>Institute functions under Youth, Employment & Skill Development Department, Government of Bihar</li>
+    <li>Academic and examination standards strictly as per DGT / NCVT guidelines</li>
+    <li>No personal data is collected through this website</li>
+    <li>All information is subject to official orders and notifications</li>
+  </ul>
+  <p><strong>Website Status:</strong> Final Locked Version (Inspection Ready)</p>
+  <p><strong>Last Updated:</strong> January 2026</p>
+</section>
+
+</main>
+
+<section id="disclaimer">
+  <h2>Disclaimer & Accessibility Statement</h2>
+  <p>
+    This is the official website of Government ITI (LWE), Tumba. Information provided is for general guidance only and is subject to official orders, circulars and notifications issued by the competent authority.
+  </p>
+  <p>
+    This website aims to follow accessibility standards as per Guidelines for Indian Government Websites (GIGW).
+  </p>
+</section>
+
+<footer>
+  <div class="footer-wrap">
+    <p>© 2026 Government ITI (LWE) Tumba, Rohtas</p>
+    <p>Youth, Employment & Skill Development Department, Government of Bihar</p>
+    <p>Academic Framework: DGT | MSDE | Government of India</p>
+    <p><strong>Website Designed & Developed by: Bijay Kumar</strong></p>
+  </div>
+</footer>
+
+<script>
+/* ===== Hero Slider Script ===== */
+let currentSlide=0;
+const slides=document.querySelectorAll('.slide');
+function showSlide(index){
+  slides.forEach((s,i)=>s.classList.toggle('active',i===index));
+}
+function nextSlide(){
+  currentSlide=(currentSlide+1)%slides.length;
+  showSlide(currentSlide);
+}
+function prevSlide(){
+  currentSlide=(currentSlide-1+slides.length)%slides.length;
+  showSlide(currentSlide);
+}
+setInterval(nextSlide,5000);
+
+
+/* ===== Text Size Controller ===== */
+function changeTextSize(size){
+  if(size==='small') document.body.style.fontSize='14px';
+  if(size==='default') document.body.style.fontSize='16px';
+  if(size==='large') document.body.style.fontSize='18px';
+}
+
+/* ===== Language Switcher ===== */
+const langData={
+  en:{
+    govline:"Government of Bihar | Official Academic Institute",
+    title:"Government Industrial Training Institute (LWE)",
+    subtitle:"Tumba, Rohtas – Bihar",
+    dept:"Youth, Employment & Skill Development Department, Government of Bihar",
+    framework:"Academic framework aligned with DGT, MSDE, Government of India",
+    home:"Home",
+    about:"About",
+    academics:"Academics",
+    faculty:"Faculty",
+    infrastructure:"Infrastructure",
+    placement:"Training & Placement",
+    notices:"Notices",
+    contact:"Contact"
+  },
+  hi:{
+    govline:"बिहार सरकार | राजकीय शैक्षणिक संस्थान",
+    title:"राजकीय औद्योगिक प्रशिक्षण संस्थान (LWE)",
+    subtitle:"तुम्बा, रोहतास – बिहार",
+    dept:"युवा, रोजगार एवं कौशल विकास विभाग, बिहार सरकार",
+    framework:"शैक्षणिक ढांचा डीजीटी एवं एमएसडीई, भारत सरकार के अनुरूप",
+    home:"मुख्य पृष्ठ",
+    about:"संस्थान परिचय",
+    academics:"शैक्षणिक",
+    faculty:"शिक्षक एवं कर्मचारी",
+    infrastructure:"अवसंरचना",
+    placement:"प्रशिक्षण एवं नियोजन",
+    notices:"सूचनाएँ",
+    contact:"संपर्क"
+  }
+};
+
+// FIXED Language Switcher
+function setLanguage(lang){
+  document.documentElement.setAttribute('lang',lang);
+  document.querySelectorAll('[data-text-key]').forEach(function(el){
+    const key = el.getAttribute('data-text-key');
+    if(langData[lang] && langData[lang][key]){
+      el.innerText = langData[lang][key];
+    }
+  });
+});
+}
+</script>
+</body>
+</html>
